@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+.icon {
+  display: block;
+  width: pxToRem(28px);
+  height: pxToRem(28px);
+}
