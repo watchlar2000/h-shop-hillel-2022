@@ -1,0 +1,100 @@
+@use '../abstracts' as *;
+
+.footer {
+  max-width: 100%;
+  min-width: pxToRem(375px);
+  padding: 0 pxToRem(40px);
+
+  &__wrapper {
+    max-width: pxToRem(375px);
+    padding: pxToRem(15px) pxToRem(19px);
+    margin-inline: auto;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: pxToRem(15px);
+    font-size: pxToRem(16px);
+    font-weight: 500;
+    color: var(--deepSkyBlue);
+  }
+
+  &__content {
+    text-align: center;
+  }
+}
+
+.payment {
+  display: flex;
+  justify-content: center;
+  gap: pxToRem(20px);
+  height: pxToRem(32px);
+}
+
+.copy {
+  margin-top: pxToRem(20px);
+  font-size: pxToRem(14px);
+  font-weight: 500;
+}
+
+// Tablet SD
+@include breakpoint(small) {
+  .footer {
+    &__wrapper {
+      max-width: pxToRem(768px);
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      padding: pxToRem(20px) 0;
+    }
+
+    &__nav {
+      margin-top: 0;
+      justify-content: flex-start;
+      gap: pxToRem(20px);
+    }
+
+    &__content {
+      flex: 1 1 0;
+    }
+  }
+  .payment {
+    flex: 1 1 0;
+    justify-content: flex-end;
+  }
+
+  .copy {
+    text-align: left;
+  }
+}
+
+// Tablet HD
+@include breakpoint(medium) {
+  .footer {
+    &__wrapper {
+      max-width: pxToRem(1024px);
+    }
+  }
+}
+
+// Desktrop SD
+@include breakpoint(large) {
+  .footer {
+    padding: 0;
+    &__wrapper {
+      max-width: pxToRem(1440px);
+      padding: pxToRem(20px) pxToRem(100px);
+    }
+  }
+}
+
+// Desktrop HD
+@include breakpoint(x-large) {
+  .footer {
+    &__wrapper {
+      max-width: pxToRem(1920px);
+      padding: pxToRem(20px) pxToRem(200px);
+    }
+  }
+}

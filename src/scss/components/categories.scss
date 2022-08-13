@@ -1,0 +1,77 @@
+@use '../abstracts' as *;
+
+.categories {
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(15px);
+    font-size: pxToRem(30px);
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .item {
+    cursor: pointer;
+    height: pxToRem(80px);
+    border-radius: pxToRem(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--deepSkyBlue);
+    background-image: linear-gradient(
+      244deg,
+      #0093e9 0%,
+      var(--deepSkyBlue) 75%
+    );
+  }
+}
+
+// Tablet SD
+@include breakpoint(small) {
+  .categories {
+    &__nav {
+      flex-direction: row;
+      gap: pxToRem(40px);
+    }
+
+    .item {
+      flex: 1 1 0;
+      height: pxToRem(200px);
+    }
+  }
+}
+
+/*
+
+// Tablet HD
+@include breakpoint(medium) {
+  .footer {
+    &__wrapper {
+      max-width: pxToRem(1024px);
+    }
+  }
+}
+
+// Desktrop SD
+@include breakpoint(large) {
+  .footer {
+    padding: 0;
+    &__wrapper {
+      max-width: pxToRem(1440px);
+      padding: pxToRem(20px) pxToRem(100px);
+    }
+  }
+}
+
+// Desktrop HD
+@include breakpoint(x-large) {
+  .footer {
+    &__wrapper {
+      max-width: pxToRem(1920px);
+      padding: pxToRem(20px) pxToRem(200px);
+    }
+  }
+}
+
+
+*/
