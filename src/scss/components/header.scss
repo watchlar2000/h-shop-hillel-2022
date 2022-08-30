@@ -46,6 +46,7 @@
     justify-content: center;
     margin-top: pxToRem(20px);
     height: pxToRem(48px);
+    text-align: center;
   }
 }
 
@@ -68,9 +69,9 @@
 
 .logo {
   display: flex;
+  width: min-content;
   align-items: center;
   gap: pxToRem(5px);
-  cursor: pointer;
   grid-area: logo;
 
   &__symbol {
@@ -127,18 +128,31 @@
 
 .btn {
   border-radius: pxToRem(6px);
-  padding: pxToRem(10px) pxToRem(13px) pxToRem(10px);
+  padding: pxToRem(9px) pxToRem(12px) pxToRem(9px);
   display: flex;
   align-items: center;
   gap: pxToRem(10px);
   color: var(--white);
+  border: 1px solid var(--deepSkyBlue);
   background-color: var(--deepSkyBlue);
   align-self: end;
   width: 100%;
+  @include transition-bgc;
+
+  &--primary:hover {
+    background-color: var(--blue-6);
+    border: 1px solid var(--blue-6);
+  }
+
+  &--primary:focus,
+  &--primary:active {
+    background-color: var(--blue-7);
+    border: 1px solid var(--blue-7);
+  }
 }
 
-.btn--shop {
-  text-align: center;
+.btn--eventsnone > * {
+  pointer-events: none;
 }
 
 .cart {
@@ -148,6 +162,8 @@
   gap: pxToRem(4px);
   padding: pxToRem(10px);
   cursor: pointer;
+  border-radius: pxToRem(6px);
+  @include transition-bgc;
 
   &__qty {
     display: flex;
@@ -161,6 +177,81 @@
     width: pxToRem(19px);
     height: pxToRem(19px);
   }
+
+  &:hover {
+    background-color: var(--blue-2);
+  }
+
+  &:focus,
+  &:active {
+    background-color: var(--blue-3);
+    outline: none !important;
+  }
+}
+
+.dropdown {
+  position: relative;
+  flex-grow: 1;
+
+  &__item {
+    margin-bottom: pxToRem(10px);
+    height: pxToRem(60px);
+    border-radius: pxToRem(10px);
+
+    &--link {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: pxToRem(20px);
+    }
+  }
+
+  &--cart {
+    flex-grow: 0;
+  }
+}
+
+.dropdown__menu {
+  position: absolute;
+  opacity: 0;
+  border: 1px solid var(--grey-1);
+  color: var(--white);
+  top: pxToRem(58px);
+  padding: pxToRem(10px);
+  border-radius: pxToRem(10px);
+  background-color: var(--white);
+  min-width: 100%;
+  width: pxToRem(345px);
+  overflow: hidden;
+  box-shadow: pxToRem(0px) pxToRem(20px) pxToRem(60px) rgba(0, 0, 0, 0.25);
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transform: translateY(-10px);
+  pointer-events: none;
+
+  &--cart {
+    right: 0;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.dropdown.active > .dropdown__menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+// .dropdown__menu {
+//   opacity: 1;
+//   transform: translateY(0);
+//   pointer-events: auto;
+// }
+
+.visible {
+  display: block;
 }
 
 .sale {
@@ -190,6 +281,7 @@
   }
 
   .btn {
+    // flex-grow: 1;
     width: max-content;
   }
 
@@ -213,6 +305,10 @@
 
   .input__icon {
     display: block;
+  }
+
+  .dropdown {
+    flex-grow: 0;
   }
 }
 

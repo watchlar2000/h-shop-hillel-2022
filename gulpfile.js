@@ -11,8 +11,11 @@ import groupCssMediaQueries from 'gulp-group-css-media-queries';
 import webpack from 'webpack-stream';
 import imagemin from 'gulp-imagemin';
 import gulpIf from 'gulp-if';
+// import uglify from 'gulp-uglify';
+// import cleanCss from 'gulp-clean-css';
 
 const sass = gulpSass(dartSass);
+
 const isBuild = process.argv.includes('--build');
 const isDev = !process.argv.includes('--build');
 
@@ -30,42 +33,44 @@ const html = () => {
 };
 
 const scss = () => {
-  return gulp
-    .src(path.src.scss, { sourcemaps: isDev })
-    .pipe(replace(/@assets\//g, '../assets/'))
-    .pipe(
-      sass({
-        outputStyle: 'expanded',
-      })
-    )
-    .pipe(groupCssMediaQueries())
-    .pipe(
-      gulpIf(
-        isBuild,
-        autoPrefixer({
-          grid: true,
-          overrideBrowserlist: ['last 3 versions'],
-          cascade: true,
-        })
+  return (
+    gulp
+      .src(path.src.scss, { sourcemaps: isDev })
+      .pipe(replace(/@assets\//g, '../assets/'))
+      .pipe(sass({ outputStyle: 'compressed' }))
+      .pipe(groupCssMediaQueries())
+      .pipe(
+        gulpIf(
+          isBuild,
+          autoPrefixer({
+            grid: true,
+            overrideBrowserlist: ['last 2 versions'],
+            cascade: true,
+          })
+        )
       )
-    )
-    .pipe(gulp.dest(path.build.css))
-    .pipe(browserSync.stream());
+      // .pipe(cleanCss({ compatibility: 'ie8' }))
+      .pipe(gulp.dest(path.build.css))
+      .pipe(browserSync.stream())
+  );
 };
 
 const js = () => {
-  return gulp
-    .src(path.src.js, { sourcemaps: isDev })
-    .pipe(
-      webpack({
-        mode: isBuild ? 'production' : 'development',
-        output: {
-          filename: 'app.js',
-        },
-      })
-    )
-    .pipe(gulp.dest(path.build.js))
-    .pipe(browserSync.stream());
+  return (
+    gulp
+      .src(path.src.js, { sourcemaps: isDev })
+      .pipe(
+        webpack({
+          mode: isBuild ? 'production' : 'development',
+          output: {
+            filename: 'app.js',
+          },
+        })
+      )
+      // .pipe(uglify())
+      .pipe(gulp.dest(path.build.js))
+      .pipe(browserSync.stream())
+  );
 };
 
 const assets = () => {
@@ -96,6 +101,7 @@ const watcher = () => {
   gulp.watch(path.watch.files, copy);
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.scss, scss);
+  gulp.watch(path.watch.js, js);
   gulp.watch(path.watch.assets, assets);
 };
 

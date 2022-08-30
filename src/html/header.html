@@ -1,16 +1,40 @@
 <header class="header">
   <div class="wrapper--nav">
     <nav class="header__nav">
-      <div class="logo">
+      <a href="/" class="logo">
         <span class="logo__symbol">h</span>
         <span class="logo__name">Shop</span>
-      </div>
-      <form action="/" class="form">
-        <button class="btn">
-          <img src="./assets/nav/catalogue.svg" alt="catalogue" />
-          Catalogue
-        </button>
-        <div class="input__icon">
+      </a>
+      <div class="form">
+        <div class="dropdown" data-dropdown>
+          <button
+            class="btn btn--primary btn--categories btn--eventsnone"
+            data-dropdown-button
+          >
+            <img src="./assets/nav/catalogue.svg" alt="catalogue" />
+            Catalogue
+          </button>
+          <ul class="dropdown__menu categories dropdown__categories">
+            <li
+              class="categories__item categories__item--fashion dropdown__item"
+            >
+              <a href="/" class="dropdown__item--link">Fashion</a>
+            </li>
+            <li class="categories__item categories__item--shoes dropdown__item">
+              <a href="/" class="dropdown__item--link">Shoes</a>
+            </li>
+            <li
+              class="categories__item categories__item--accessories dropdown__item"
+            >
+              <a href="/" class="dropdown__item--link">Accessories</a>
+            </li>
+
+            <li class="footer__links"><a href="/">About us</a></li>
+            <li class="footer__links"><a href="/">Terms & Conditions</a></li>
+            <li class="footer__links"><a href="/">Contact</a></li>
+          </ul>
+        </div>
+        <form action="/" class="input__icon">
           <input
             type="text"
             name="search"
@@ -22,15 +46,21 @@
           <button class="input__btn--search">
             <img src="./assets/nav/search.svg" alt="search" />
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
       <div class="nav__wrapper">
         <button class="btn--search">
           <img src="./assets/nav/search.svg" alt="search" />
         </button>
-        <div class="cart">
-          <img src="./assets/nav/cart.svg" alt="cart" class="icon" />
-          <span class="cart__qty">0</span>
+        <div class="dropdown dropdown--cart" data-dropdown>
+          <button class="cart btn--eventsnone" data-dropdown-button>
+            <img src="./assets/nav/cart.svg" alt="cart" class="icon" />
+            <span class="cart__qty">0</span>
+          </button>
+          <div class="dropdown__menu dropdown__menu--cart">
+            <div class="cart__items">No items in the cart yet...</div>
+            <button class="btn btn--primary">Checkout</button>
+          </div>
         </div>
       </div>
     </nav>
@@ -45,7 +75,7 @@
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia sint
           delectus beatae ut incidunt voluptas eos cum. Rem, vitae fugiat?
         </p>
-        <button class="btn btn--shop">Show now</button>
+        <button class="btn btn--shop">Shop now</button>
       </div>
     </div>
   </div>

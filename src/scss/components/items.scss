@@ -1,0 +1,165 @@
+@use '../abstracts' as *;
+
+.items {
+  &__title {
+    font-size: pxToRem(12px);
+    line-height: pxToRem(15px);
+    letter-spacing: pxToRem(1px);
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &__grid {
+    margin-top: pxToRem(15px);
+    display: grid;
+    gap: pxToRem(15px);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+.item {
+  &__img {
+    position: relative;
+    height: pxToRem(165px);
+    background-color: grey;
+    overflow: hidden;
+    border-radius: pxToRem(6px);
+
+    .sale {
+      position: absolute;
+      top: pxToRem(10px);
+      left: pxToRem(10px);
+      pointer-events: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__title {
+    font-size: pxToRem(16px);
+    line-height: pxToRem(20px);
+    font-weight: 500;
+    margin-top: pxToRem(10px);
+  }
+}
+
+.price {
+  display: inline-block;
+  font-size: pxToRem(16px);
+  line-height: pxToRem(20px);
+  font-weight: 500;
+  margin-top: pxToRem(10px);
+  margin-right: pxToRem(10px);
+  color: var(--aqua-2);
+
+  &--old {
+    @extend .price;
+    text-decoration: line-through;
+    color: var(--grey-3);
+  }
+}
+
+.items__title {
+  margin-top: pxToRem(30px);
+}
+
+.items > div:first-child {
+  border-bottom: 1px solid var(--grey-1);
+  padding-bottom: pxToRem(30px);
+}
+
+// Tablet SD
+@include breakpoint(small) {
+  .items {
+    &__grid {
+      gap: pxToRem(40px);
+    }
+  }
+
+  .item {
+    &__img {
+      height: pxToRem(324px);
+    }
+  }
+
+  .items__title {
+    margin-top: pxToRem(40px);
+  }
+
+  .items > div:first-child {
+    padding-bottom: pxToRem(40px);
+  }
+}
+
+// Tablet HD
+@include breakpoint(medium) {
+  .items {
+    &__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .item {
+    &__img {
+      height: pxToRem(280px);
+    }
+  }
+}
+
+// Desktrop SD
+@include breakpoint(large) {
+  .items {
+    &__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+// Desktrop HD
+@include breakpoint(x-large) {
+  .item {
+    &__img {
+      height: pxToRem(350px);
+    }
+  }
+}
+
+/*
+// Tablet SD
+@include breakpoint(small) {
+  .main {
+    max-width: pxToRem(768px);
+    padding: pxToRem(40px);
+  }
+}
+
+// Tablet HD
+@include breakpoint(medium) {
+  .main {
+    max-width: pxToRem(1024px);
+  }
+}
+
+// Desktrop SD
+@include breakpoint(large) {
+  .main {
+    max-width: pxToRem(1440px);
+    padding: pxToRem(40px) pxToRem(100px);
+  }
+}
+
+// Desktrop HD
+@include breakpoint(x-large) {
+  .main {
+    max-width: pxToRem(1920px);
+    padding: pxToRem(40px) pxToRem(200px);
+  }
+}
+
+*/

@@ -3,7 +3,6 @@
 .footer {
   max-width: 100%;
   min-width: pxToRem(375px);
-  padding: 0 pxToRem(40px);
 
   &__wrapper {
     max-width: pxToRem(375px);
@@ -14,10 +13,21 @@
   &__nav {
     display: flex;
     justify-content: space-between;
+  }
+
+  &__links {
     margin-top: pxToRem(15px);
     font-size: pxToRem(16px);
     font-weight: 500;
     color: var(--deepSkyBlue);
+    width: max-content;
+  }
+
+  &__links:focus,
+  &__links:hover {
+    outline: none !important;
+    text-decoration: underline;
+    color: var(--blue-6);
   }
 
   &__content {
@@ -41,6 +51,8 @@
 // Tablet SD
 @include breakpoint(small) {
   .footer {
+    padding: 0 pxToRem(40px);
+
     &__wrapper {
       max-width: pxToRem(768px);
       display: flex;

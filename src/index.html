@@ -3,8 +3,9 @@
   @@include('./html/head.html', { "title": "H-shop", })
   <body>
     @@include('./html/header.html')
-    <div class="main">@@include('./html/categories.html')</div>
-    @@include('./html/footer.html')
-    <script src="./js/app.js"></script>
+    <div class="main">
+      @@include('./html/categories.html') @@include('./html/items.html')
+    </div>
+    @@include('./html/footer.html') @@include('./html/scripts.html')
   </body>
 </html>

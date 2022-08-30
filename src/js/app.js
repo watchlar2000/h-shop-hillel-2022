@@ -1,6 +1,6 @@
-import { foo } from './modules/nav.js';
+import { foo } from './modules/popper.js';
+import { jquery } from './modules/utilities.js';
 
-const test = document.querySelector('.test');
-test.textContent = 'Henlo!!!';
+console.log('app js test');
 
-foo();
+jquery();

@@ -16,8 +16,8 @@ body {
   color: var(--text-clr);
 }
 
-ul[class],
-ol[class] {
+ul,
+ol {
   padding: 0;
 }
 
@@ -53,7 +53,7 @@ p {
   margin-top: 0;
 }
 
-ul[class] {
+ul {
   list-style: none;
 }
 
