@@ -3,6 +3,7 @@
 .footer {
   max-width: 100%;
   min-width: pxToRem(375px);
+  flex: 0 0 auto;
 
   &__wrapper {
     max-width: pxToRem(375px);

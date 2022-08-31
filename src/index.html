@@ -2,10 +2,14 @@
 <html lang="en">
   @@include('./html/head.html', { "title": "H-shop", })
   <body>
-    @@include('./html/header.html')
-    <div class="main">
-      @@include('./html/categories.html') @@include('./html/items.html')
+    <div class="wrapper">
+      @@include('./html/header.html')
+
+      <div class="main">
+        @@include('./html/categories.html') @@include('./html/items.html')
+      </div>
+      @@include('./html/footer.html')
     </div>
-    @@include('./html/footer.html') @@include('./html/scripts.html')
+    @@include('./html/scripts.html')
   </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
   <meta charset="UTF-8" />
@@ -34,7 +34,7 @@
         <span class="logo__name">Shop</span>
       </a>
       <div class="form">
-        <div class="dropdown" data-dropdown>
+        <div class="dropdown dropdown--catalogue" data-dropdown>
           <button
             class="btn btn--primary btn--categories btn--eventsnone"
             data-dropdown-button
@@ -42,25 +42,39 @@
             <img src="./assets/nav/catalogue.svg" alt="catalogue" />
             Catalogue
           </button>
-          <ul class="dropdown__menu categories dropdown__categories">
-            <li
-              class="categories__item categories__item--fashion dropdown__item"
-            >
-              <a href="/" class="dropdown__item--link">Fashion</a>
-            </li>
-            <li class="categories__item categories__item--shoes dropdown__item">
-              <a href="/" class="dropdown__item--link">Shoes</a>
-            </li>
-            <li
-              class="categories__item categories__item--accessories dropdown__item"
-            >
-              <a href="/" class="dropdown__item--link">Accessories</a>
-            </li>
 
-            <li class="footer__links"><a href="/">About us</a></li>
-            <li class="footer__links"><a href="/">Terms & Conditions</a></li>
-            <li class="footer__links"><a href="/">Contact</a></li>
-          </ul>
+          <div class="dropdown__menu dropdown__menu--categories">
+            <div class="dropdown__header">
+              <h3>Catalogue</h3>
+              <img
+                class="dropdown__header--btn"
+                src="./assets/misc/remove.svg"
+                alt="close"
+                data-cart-close
+              />
+            </div>
+            <ul>
+              <li
+                class="categories__item categories__item--fashion dropdown__item"
+              >
+                <a href="/" class="dropdown__item--link">Fashion</a>
+              </li>
+              <li
+                class="categories__item categories__item--shoes dropdown__item"
+              >
+                <a href="/" class="dropdown__item--link">Shoes</a>
+              </li>
+              <li
+                class="categories__item categories__item--accessories dropdown__item"
+              >
+                <a href="/" class="dropdown__item--link">Accessories</a>
+              </li>
+
+              <li class="footer__links"><a href="/">About us</a></li>
+              <li class="footer__links"><a href="/">Terms & Conditions</a></li>
+              <li class="footer__links"><a href="/">Contact</a></li>
+            </ul>
+          </div>
         </div>
         <form action="/" class="input__icon">
           <input
@@ -83,11 +97,94 @@
         <div class="dropdown dropdown--cart" data-dropdown>
           <button class="cart btn--eventsnone" data-dropdown-button>
             <img src="./assets/nav/cart.svg" alt="cart" class="icon" />
-            <span class="cart__qty">0</span>
+            <span class="cart__qty">3</span>
           </button>
           <div class="dropdown__menu dropdown__menu--cart">
-            <div class="cart__items">No items in the cart yet...</div>
-            <button class="btn btn--primary">Checkout</button>
+            <div class="dropdown__header">
+  <h3>Cart</h3>
+  <img
+    class="dropdown__header--btn"
+    src="./assets/misc/remove.svg"
+    alt="close"
+    data-cart-close
+  />
+</div>
+<ul class="cart__items">
+  <li class="cart__item">
+    <div class="cart__item--img">
+      <img src="./assets/fashion.jpg" alt="/" />
+    </div>
+    <div class="cart__item--content">
+      <span class="cart__item--title">Lorem, ipsum.</span>
+      <div class="cart__count">
+        <div class="cart__icon cart__icon--blue">
+          <img src="./assets/misc/remove-1.svg" alt="remove" />
+        </div>
+        <span class="cart__count--amount" data-item-count>1</span>
+        <div class="cart__icon cart__icon--blue">
+          <img src="./assets/misc/add.svg" alt="add" />
+        </div>
+      </div>
+      <div class="cart__item--wrapper">
+        <span class="cart__count--price">$150</span>
+        <div class="cart__icon cart__icon--red">
+          <img src="./assets/misc/remove.svg" alt="delete" />
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="cart__item">
+    <div class="cart__item--img">
+      <img src="./assets/fashion.jpg" alt="/" />
+    </div>
+    <div class="cart__item--content">
+      <span class="cart__item--title">Lorem, ipsum.</span>
+      <div class="cart__count">
+        <div class="cart__icon cart__icon--blue">
+          <img src="./assets/misc/remove-1.svg" alt="remove" />
+        </div>
+        <span class="cart__count--amount" data-item-count>1</span>
+        <div class="cart__icon cart__icon--blue">
+          <img src="./assets/misc/add.svg" alt="add" />
+        </div>
+      </div>
+      <div class="cart__item--wrapper">
+        <span class="cart__count--price">$75</span>
+        <div class="cart__icon cart__icon--red">
+          <img src="./assets/misc/remove.svg" alt="delete" />
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="cart__item">
+    <div class="cart__item--img">
+      <img src="./assets/fashion.jpg" alt="/" />
+    </div>
+    <div class="cart__item--content">
+      <span class="cart__item--title">Lorem, ipsum.</span>
+      <div class="cart__count">
+        <div class="cart__icon cart__icon--blue">
+          <img src="./assets/misc/remove-1.svg" alt="remove" />
+        </div>
+        <span class="cart__count--amount" data-item-count>1</span>
+        <div class="cart__icon cart__icon--blue">
+          <img src="./assets/misc/add.svg" alt="add" />
+        </div>
+      </div>
+      <div class="cart__item--wrapper">
+        <span class="cart__count--price">$200</span>
+        <div class="cart__icon cart__icon--red">
+          <img src="./assets/misc/remove.svg" alt="delete" />
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+<div class="cart__total">
+  Total: <span class="cart__count--price">$425</span>
+</div>
+<button class="btn btn--primary btn--checkout">Checkout</button>
+
           </div>
         </div>
       </div>
@@ -113,15 +210,17 @@
     <li
       class="categories__item categories__item--fashion categories__item--hero"
     >
-      <a href="/" class="categories__item--link">Fashion</a>
+      <a href="./fashion.html" class="categories__item--link">Fashion</a>
     </li>
     <li class="categories__item categories__item--shoes categories__item--hero">
-      <a href="/" class="categories__item--link">Shoes</a>
+      <a href="./shoes.html" class="categories__item--link">Shoes</a>
     </li>
     <li
       class="categories__item categories__item--accessories categories__item--hero"
     >
-      <a href="/" class="categories__item--link">Accessories</a>
+      <a href="./accessories.html" class="categories__item--link"
+        >Accessories</a
+      >
     </li>
   </ul>
 </section>
@@ -144,4 +243,4 @@
 </footer>
 
   </body>
-</html>
+</html> -->

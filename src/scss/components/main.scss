@@ -1,7 +1,14 @@
 @use '../abstracts' as *;
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
 .main {
   width: 100%;
+  flex: 1 1 auto;
   min-width: pxToRem(375px);
   padding: pxToRem(15px);
   margin-inline: auto;

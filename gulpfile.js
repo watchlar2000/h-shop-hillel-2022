@@ -36,8 +36,8 @@ const scss = () => {
   return (
     gulp
       .src(path.src.scss, { sourcemaps: isDev })
-      .pipe(replace(/@assets\//g, '../assets/'))
       .pipe(sass({ outputStyle: 'compressed' }))
+      .pipe(replace(/@assets\//g, '../assets/'))
       .pipe(groupCssMediaQueries())
       .pipe(
         gulpIf(

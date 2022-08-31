@@ -6,33 +6,47 @@
         <span class="logo__name">Shop</span>
       </a>
       <div class="form">
-        <div class="dropdown" data-dropdown>
+        <div class="dropdown dropdown--catalogue" data-dropdown>
           <button
             class="btn btn--primary btn--categories btn--eventsnone"
             data-dropdown-button
           >
-            <img src="./assets/nav/catalogue.svg" alt="catalogue" />
+            <img src="@assets/nav/catalogue.svg" alt="catalogue" />
             Catalogue
           </button>
-          <ul class="dropdown__menu categories dropdown__categories">
-            <li
-              class="categories__item categories__item--fashion dropdown__item"
-            >
-              <a href="/" class="dropdown__item--link">Fashion</a>
-            </li>
-            <li class="categories__item categories__item--shoes dropdown__item">
-              <a href="/" class="dropdown__item--link">Shoes</a>
-            </li>
-            <li
-              class="categories__item categories__item--accessories dropdown__item"
-            >
-              <a href="/" class="dropdown__item--link">Accessories</a>
-            </li>
 
-            <li class="footer__links"><a href="/">About us</a></li>
-            <li class="footer__links"><a href="/">Terms & Conditions</a></li>
-            <li class="footer__links"><a href="/">Contact</a></li>
-          </ul>
+          <div class="dropdown__menu dropdown__menu--categories">
+            <div class="dropdown__header">
+              <h3>Catalogue</h3>
+              <img
+                class="dropdown__header--btn"
+                src="@assets/misc/remove.svg"
+                alt="close"
+                data-cart-close
+              />
+            </div>
+            <ul>
+              <li
+                class="categories__item categories__item--fashion dropdown__item"
+              >
+                <a href="/" class="dropdown__item--link">Fashion</a>
+              </li>
+              <li
+                class="categories__item categories__item--shoes dropdown__item"
+              >
+                <a href="/" class="dropdown__item--link">Shoes</a>
+              </li>
+              <li
+                class="categories__item categories__item--accessories dropdown__item"
+              >
+                <a href="/" class="dropdown__item--link">Accessories</a>
+              </li>
+
+              <li class="footer__links"><a href="/">About us</a></li>
+              <li class="footer__links"><a href="/">Terms & Conditions</a></li>
+              <li class="footer__links"><a href="/">Contact</a></li>
+            </ul>
+          </div>
         </div>
         <form action="/" class="input__icon">
           <input
@@ -44,22 +58,21 @@
             class="icon--search"
           />
           <button class="input__btn--search">
-            <img src="./assets/nav/search.svg" alt="search" />
+            <img src="@assets/nav/search.svg" alt="search" />
           </button>
         </form>
       </div>
       <div class="nav__wrapper">
         <button class="btn--search">
-          <img src="./assets/nav/search.svg" alt="search" />
+          <img src="@assets/nav/search.svg" alt="search" />
         </button>
         <div class="dropdown dropdown--cart" data-dropdown>
           <button class="cart btn--eventsnone" data-dropdown-button>
-            <img src="./assets/nav/cart.svg" alt="cart" class="icon" />
-            <span class="cart__qty">0</span>
+            <img src="@assets/nav/cart.svg" alt="cart" class="icon" />
+            <span class="cart__qty">3</span>
           </button>
           <div class="dropdown__menu dropdown__menu--cart">
-            <div class="cart__items">No items in the cart yet...</div>
-            <button class="btn btn--primary">Checkout</button>
+            @@include('./shopping_cart.html')
           </div>
         </div>
       </div>
@@ -67,7 +80,7 @@
   </div>
   <div class="wrapper--content header__hero">
     <div class="header__content">
-      <img src="./assets/hero_image.png" alt="hero image" class="header__img" />
+      <img src="@assets/hero_image.png" alt="hero image" class="header__img" />
       <div class="header__content--text">
         <span class="sale">Winter sale</span>
         <h2>Get 30% off winter collection</h2>

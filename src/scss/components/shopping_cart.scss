@@ -1,0 +1,118 @@
+@use '../abstracts' as *;
+
+.cart {
+  &__items {
+    position: relative;
+    margin-bottom: pxToRem(15px);
+  }
+
+  &__items::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: pxToRem(1px);
+    background-color: var(--grey-1);
+    width: 100%;
+  }
+
+  &__total {
+    color: var(--grey-3);
+    margin-bottom: pxToRem(15px);
+    text-align: right;
+  }
+
+  &__item {
+    display: flex;
+    width: 100%;
+    gap: pxToRem(10px);
+    margin-bottom: pxToRem(15px);
+    height: pxToRem(61px);
+
+    &--content {
+      display: flex;
+      gap: pxToRem(20px);
+      flex: 1 0 auto;
+    }
+
+    &--img {
+      width: pxToRem(61px);
+      overflow: hidden;
+      border-radius: pxToRem(3px);
+    }
+
+    &--img > img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &--title {
+      flex: 1 0 auto;
+      margin-top: pxToRem(4px);
+    }
+
+    &--wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: end;
+      min-width: pxToRem(45px);
+    }
+  }
+
+  &__count {
+    display: flex;
+    align-items: center;
+    gap: pxToRem(10px);
+    align-self: end;
+    background-color: var(---grey-2);
+    border-radius: 12px;
+
+    &--price {
+      color: var(--aqua-2);
+      line-height: pxToRem(24px);
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.1s ease-in-out;
+
+    &--blue:hover {
+      background-color: var(--blue-1);
+    }
+
+    &--red:hover {
+      background-color: var(--orange-1);
+    }
+  }
+}
+
+.dropdown__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: pxToRem(15px);
+
+  &--btn {
+    width: pxToRem(28px);
+    height: pxToRem(28px);
+    border: 2px solid var(--orange-8);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  & > h3 {
+    font-size: pxToRem(30px);
+    font-weight: 500;
+    line-height: pxToRem(37px);
+  }
+}
+
+.btn--checkout {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
