@@ -2,7 +2,7 @@ import { dropDown } from './modules/dropdown.js';
 import ScreenHome from './modules/screens/screenHome.js';
 import { ScreenProducts } from './modules/screens/screenProducts.js';
 import ScreenProduct from './modules/screens/screenProduct.js';
-import data from '../data.js';
+// import data from '../data.js';
 import Screen404 from './modules/screens/screen404.js';
 // import { priceFilter } from './modules/slider.js';
 
