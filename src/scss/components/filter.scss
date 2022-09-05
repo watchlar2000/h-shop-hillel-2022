@@ -1,0 +1,113 @@
+@use '../abstracts' as *;
+
+.filter {
+  &__header {
+    position: relative;
+    margin-top: pxToRem(15px);
+    padding-top: pxToRem(15px);
+    font-weight: 700;
+    font-size: pxToRem(17px);
+    line-height: pxToRem(17px);
+    letter-spacing: pxToRem(1px);
+    text-transform: uppercase;
+  }
+
+  &__header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 0.0625rem;
+    background-color: var(--grey-1);
+    width: 100%;
+  }
+
+  &__buttons {
+    margin-top: pxToRem(10px);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: pxToRem(5px);
+
+    .amount {
+      color: var(--grey-3);
+    }
+
+    &--pick {
+      display: flex;
+      justify-content: space-between;
+      font-size: pxToRem(14px);
+      padding: pxToRem(5px);
+      border-radius: pxToRem(6px);
+      transition: background-color 0.1s ease-in-out;
+    }
+
+    &--pick:hover {
+      background-color: var(--grey-1);
+    }
+
+    &--pick:active {
+      background-color: var(--aqua);
+    }
+  }
+}
+
+.btn--filter {
+  font-size: pxToRem(18px);
+  color: var(--deepSkyBlue);
+  background-color: var(--blue-1);
+  border: 1px solid var(--blue-1);
+  position: relative;
+  padding: pxToRem(10px);
+}
+
+#slider__price-filter {
+  height: 70px;
+  background-color: var(--blue-1);
+}
+
+// Tablet SD
+@include breakpoint(small) {
+  .btn--filter > span {
+    visibility: hidden;
+    display: none;
+    width: 0;
+    padding: 0;
+    // margin: 0;
+  }
+}
+
+// Tablet HD
+@include breakpoint(medium) {
+  .filter {
+    position: relative;
+  }
+
+  .btn--filter {
+    display: none;
+  }
+
+  .dropdown__menu--filter {
+    position: static;
+    opacity: 1;
+    transition: none;
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    width: auto;
+    padding: 0;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .shop__now {
+    flex-basis: 33.33%;
+  }
+}
+
+// Desktop SD
+@include breakpoint(large) {
+  .shop__now {
+    flex-basis: 25%;
+  }
+}

@@ -37,7 +37,7 @@
       <div class="form">
         <div class="dropdown dropdown--catalogue" data-dropdown>
           <button
-            class="btn btn--primary btn--categories btn--eventsnone"
+            class="btn btn--primary btn--catalogue btn--eventsnone"
             data-dropdown-button
           >
             <img src="./assets/nav/catalogue.svg" alt="catalogue" />
@@ -58,17 +58,19 @@
               <li
                 class="categories__item categories__item--fashion dropdown__item"
               >
-                <a href="/" class="dropdown__item--link">Fashion</a>
+                <a href="/fashion.html" class="dropdown__item--link">Fashion</a>
               </li>
               <li
                 class="categories__item categories__item--shoes dropdown__item"
               >
-                <a href="/" class="dropdown__item--link">Shoes</a>
+                <a href="/shoes.html" class="dropdown__item--link">Shoes</a>
               </li>
               <li
                 class="categories__item categories__item--accessories dropdown__item"
               >
-                <a href="/" class="dropdown__item--link">Accessories</a>
+                <a href="/accessories.html" class="dropdown__item--link"
+                  >Accessories</a
+                >
               </li>
 
               <li class="footer__links"><a href="/">About us</a></li>
@@ -191,21 +193,23 @@
       </div>
     </nav>
   </div>
-  <div class="wrapper--content header__hero">
-    <div class="header__content">
-      <img src="./assets/hero_image.png" alt="hero image" class="header__img" />
-      <div class="header__content--text">
+</header>
+ <section class="banner">
+  <div class="wrapper--banner banner__hero">
+    <div class="banner__content">
+      <img src="./assets/hero_image.png" alt="hero image" class="banner__img" />
+      <div class="banner__content--text">
         <span class="sale">Winter sale</span>
         <h2>Get 30% off winter collection</h2>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia sint
           delectus beatae ut incidunt voluptas eos cum. Rem, vitae fugiat?
         </p>
-        <button class="btn btn--shop">Shop now</button>
+        <a href="/shop.html" class="btn btn--shop">Shop now</a>
       </div>
     </div>
   </div>
-</header>
+</section>
 
 
       <div class="main">
@@ -214,7 +218,9 @@
     <li
       class="categories__item categories__item--fashion categories__item--hero"
     >
-      <a href="./fashion.html" class="categories__item--link">Fashion</a>
+      <a href="./fashion.html" class="categories__item--link" data-btn-fashion
+        >Fashion</a
+      >
     </li>
     <li class="categories__item categories__item--shoes categories__item--hero">
       <a href="./shoes.html" class="categories__item--link">Shoes</a>
@@ -228,114 +234,7 @@
     </li>
   </ul>
 </section>
- <section class="items">
-  <div>
-    <h3 class="items__title">On sale</h3>
-    <ul class="items__grid">
-      <li class="item">
-        <div class="item__img">
-          <span class="sale">Sale</span>
-          <img
-            src="./assets/items/alex-geerts-F4MkjOYGxrk-unsplash.jpg"
-            alt="/"
-          />
-        </div>
-        <h3 class="item__title"><a href="/">Lorem, ipsum dolor</a></h3>
-        <span class="price">$150</span>
-        <span class="price--old">$200</span>
-      </li>
-      <li class="item">
-        <div class="item__img">
-          <span class="sale">Sale</span>
-          <img
-            src="./assets/items/alex-geerts-F4MkjOYGxrk-unsplash.jpg"
-            alt="/"
-          />
-        </div>
-        <h3 class="item__title"><a href="/">Lorem, ipsum dolor</a></h3>
-        <span class="price">$150</span>
-        <span class="price--old">$200</span>
-      </li>
-      <li class="item">
-        <div class="item__img">
-          <span class="sale">Sale</span>
-          <img
-            src="./assets/items/alex-geerts-F4MkjOYGxrk-unsplash.jpg"
-            alt="/"
-          />
-        </div>
-        <h3 class="item__title"><a href="/">Lorem, ipsum dolor</a></h3>
-        <span class="price">$150</span>
-        <span class="price--old">$200</span>
-      </li>
-      <li class="item">
-        <div class="item__img">
-          <span class="sale">Sale</span>
-          <img
-            src="./assets/items/alex-geerts-F4MkjOYGxrk-unsplash.jpg"
-            alt="/"
-          />
-        </div>
-        <h3 class="item__title"><a href="/">Lorem, ipsum dolor</a></h3>
-        <span class="price">$150</span>
-        <span class="price--old">$200</span>
-      </li>
-    </ul>
-  </div>
-  <div>
-    <h3 class="items__title">New arrival</h3>
-    <ul class="items__grid new-arrival">
-      <li class="item">
-        <div class="item__img">
-          <!-- <span class="sale">Sale</span> -->
-          <img
-            src="./assets/items/alex-geerts-F4MkjOYGxrk-unsplash.jpg"
-            alt="/"
-          />
-        </div>
-        <h3 class="item__title"><a href="/">Lorem, ipsum dolor</a></h3>
-        <span class="price">$150</span>
-        <!-- <span class="price--old">$200</span> -->
-      </li>
-      <li class="item">
-        <div class="item__img">
-          <!-- <span class="sale">Sale</span> -->
-          <img
-            src="./assets/items/alex-geerts-F4MkjOYGxrk-unsplash.jpg"
-            alt="/"
-          />
-        </div>
-        <h3 class="item__title"><a href="/">Lorem, ipsum dolor</a></h3>
-        <span class="price">$150</span>
-        <!-- <span class="price--old">$200</span> -->
-      </li>
-      <li class="item">
-        <div class="item__img">
-          <!-- <span class="sale">Sale</span> -->
-          <img
-            src="./assets/items/alex-geerts-F4MkjOYGxrk-unsplash.jpg"
-            alt="/"
-          />
-        </div>
-        <h3 class="item__title"><a href="/">Lorem, ipsum dolor</a></h3>
-        <span class="price">$150</span>
-        <!-- <span class="price--old">$200</span> -->
-      </li>
-      <li class="item">
-        <div class="item__img">
-          <!-- <span class="sale">Sale</span> -->
-          <img
-            src="./assets/items/alex-geerts-F4MkjOYGxrk-unsplash.jpg"
-            alt="/"
-          />
-        </div>
-        <h3 class="item__title"><a href="/">Lorem, ipsum dolor</a></h3>
-        <span class="price">$150</span>
-        <!-- <span class="price--old">$200</span> -->
-      </li>
-    </ul>
-  </div>
-</section>
+ <section id="products" class="products"></section>
 
       </div>
       <footer class="footer">
@@ -363,7 +262,7 @@
   integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
   crossorigin="anonymous"
 ></script>
-<script src="./js/app.js"></script>
+<script type="module" src="./js/app.js"></script>
 
   </body>
 </html>

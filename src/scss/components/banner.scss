@@ -1,0 +1,114 @@
+@use '../abstracts' as *;
+
+.banner {
+  width: 100%;
+  min-width: pxToRem(375px);
+
+  &__content {
+    margin-top: pxToRem(15px);
+    margin-inline: auto;
+
+    &--text {
+      margin-top: pxToRem(30px);
+      line-height: pxToRem(24px);
+    }
+  }
+
+  &__hero {
+    background-color: var(--lightCyan);
+  }
+
+  h2 {
+    font-size: pxToRem(30px);
+    font-weight: 500;
+    line-height: pxToRem(37px);
+    margin-top: pxToRem(20px);
+  }
+
+  p {
+    margin-top: pxToRem(10px);
+  }
+
+  .btn--shop {
+    display: flex;
+    justify-content: center;
+    margin-top: pxToRem(20px);
+    height: pxToRem(48px);
+    text-align: center;
+    color: var(--white);
+  }
+}
+
+.wrapper--banner {
+  padding: pxToRem(15px);
+}
+
+.banner__img {
+  margin-inline: auto;
+  height: pxToRem(240px);
+}
+
+.sale {
+  text-transform: uppercase;
+  font-size: pxToRem(12px);
+  font-weight: 500;
+  letter-spacing: pxToRem(1px);
+  padding: pxToRem(6px);
+  border-radius: pxToRem(4px);
+  background-color: var(--aqua);
+}
+
+// Tablet SD
+@include breakpoint(small) {
+  .banner {
+    &__content {
+      max-width: pxToRem(768px);
+    }
+  }
+
+  .wrapper--banner {
+    padding: pxToRem(40px);
+  }
+}
+
+// Tablet HD
+@include breakpoint(medium) {
+  .banner {
+    &__content {
+      max-width: pxToRem(1024px);
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: pxToRem(40px);
+      margin-top: 0;
+    }
+
+    &__img {
+      height: pxToRem(400px);
+    }
+  }
+
+  .wrapper--banner {
+    padding: pxToRem(50px) pxToRem(40px);
+  }
+}
+
+// Desktrop SD
+@include breakpoint(large) {
+  .banner {
+    &__content {
+      max-width: pxToRem(1440px);
+      padding: 0 pxToRem(180px);
+    }
+  }
+}
+
+// Desktrop HD
+@include breakpoint(x-large) {
+  .banner {
+    &__content {
+      max-width: pxToRem(1920px);
+      padding: 0 pxToRem(280px);
+    }
+  }
+}

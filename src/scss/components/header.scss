@@ -16,31 +16,6 @@
       'catalogue catalogue';
   }
 
-  &__content {
-    margin-top: pxToRem(15px);
-    margin-inline: auto;
-
-    &--text {
-      margin-top: pxToRem(30px);
-      line-height: pxToRem(24px);
-    }
-  }
-
-  &__hero {
-    background-color: var(--lightCyan);
-  }
-
-  h2 {
-    font-size: pxToRem(30px);
-    font-weight: 500;
-    line-height: pxToRem(37px);
-    margin-top: pxToRem(20px);
-  }
-
-  p {
-    margin-top: pxToRem(10px);
-  }
-
   .btn--shop {
     display: flex;
     justify-content: center;
@@ -214,9 +189,9 @@
     flex-grow: 0;
   }
 
-  // &--catalogue {
-  //   width: 100%;
-  // }
+  &--catalogue {
+    width: 100%;
+  }
 }
 
 .dropdown__menu {
@@ -314,6 +289,10 @@
     &__item {
       height: pxToRem(100px);
     }
+
+    &--catalogue {
+      width: auto;
+    }
   }
 }
 
@@ -344,7 +323,6 @@
 
   .wrapper--content {
     padding: pxToRem(50px) pxToRem(40px);
-    margin-inline: auto;
   }
 
   .form {
@@ -367,7 +345,6 @@
     &__menu {
       &--cart,
       &--categories {
-        // left: 0;
         right: 0;
         top: auto;
         bottom: auto;
@@ -385,24 +362,6 @@
       }
     }
   }
-
-  // .dropdown__menu {
-  // position: absolute;
-  // opacity: 0;
-  // border: 1px solid var(--grey-1);
-  // color: var(--white);
-  // top: pxToRem(58px);
-  // padding: pxToRem(15px);
-  // // border-radius: pxToRem(10px);
-  // background-color: var(--white);
-  // width: pxToRem(345px);
-  // overflow: hidden;
-  // box-shadow: pxToRem(0px) pxToRem(20px) pxToRem(60px) rgba(0, 0, 0, 0.25);
-  // transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-  // transform: translateY(-10px);
-  // pointer-events: none;
-
-  // }
 }
 
 // Desktrop SD
@@ -419,9 +378,12 @@
     }
   }
 
-  .wrapper--nav,
-  .wrapper--content {
+  .wrapper--nav {
     margin-inline: auto;
+  }
+
+  .wrapper--nav {
+    padding: pxToRem(20px) 0;
   }
 }
 

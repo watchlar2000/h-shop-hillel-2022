@@ -1,0 +1,62 @@
+@use '../abstracts' as *;
+
+.breadcrumps {
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(5px);
+
+    &--home {
+      font-size: pxToRem(12px);
+    }
+
+    &--page {
+      font-size: pxToRem(30px);
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    background-color: var(--grey-2);
+  }
+
+  &__select {
+    padding: pxToRem(12px) pxToRem(7px);
+    font-size: pxToRem(15px);
+    border: 1px solid var(--grey-1);
+    border-radius: pxToRem(6px);
+    cursor: pointer;
+    background-color: var(--white);
+    outline: none;
+  }
+}
+
+// Tablet SD
+@include breakpoint(small) {
+  .breadcrumps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__select {
+      width: pxToRem(178px);
+    }
+  }
+
+  .main {
+    // display: flex;
+  }
+}
+
+// Tablet HD
+@include breakpoint(medium) {
+}
+
+// Desktrop SD
+@include breakpoint(large) {
+}
+
+// Desktrop HD
+@include breakpoint(x-large) {
+}

@@ -3,7 +3,8 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  flex: 1 1 auto;
+  // min-height: 100%;
 }
 
 .main {
@@ -12,35 +13,89 @@
   min-width: pxToRem(375px);
   padding: pxToRem(15px);
   margin-inline: auto;
+
+  &__fashion {
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(15px);
+  }
+}
+
+.container {
+  padding: pxToRem(15px);
+  display: flex;
+  flex-direction: column;
+  gap: pxToRem(15px);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.products__grid {
+  grid-template-columns: repeat(2, 1fr) !important;
 }
 
 // Tablet SD
 @include breakpoint(small) {
-  .main {
+  .main,
+  .container {
     max-width: pxToRem(768px);
+  }
+
+  .main {
     padding: pxToRem(40px);
+
+    &__fashion {
+      display: flex;
+      flex-direction: row;
+      gap: pxToRem(40px);
+    }
+  }
+
+  .container {
+    padding: pxToRem(20px) pxToRem(40px);
   }
 }
 
 // Tablet HD
 @include breakpoint(medium) {
-  .main {
+  .main,
+  .container {
     max-width: pxToRem(1024px);
   }
 }
 
 // Desktrop SD
 @include breakpoint(large) {
-  .main {
+  .main,
+  .container {
     max-width: pxToRem(1440px);
+  }
+
+  .main {
     padding: pxToRem(40px) pxToRem(100px);
+  }
+
+  .container {
+    padding: pxToRem(20px) pxToRem(100px);
+  }
+
+  .products__grid {
+    grid-template-columns: repeat(3, 1fr) !important;
   }
 }
 
 // Desktrop HD
 @include breakpoint(x-large) {
-  .main {
+  .main,
+  .container {
     max-width: pxToRem(1920px);
+  }
+
+  .main {
     padding: pxToRem(40px) pxToRem(200px);
+  }
+
+  .container {
+    padding: pxToRem(20px) pxToRem(200px);
   }
 }

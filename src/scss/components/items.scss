@@ -10,11 +10,23 @@
   }
 
   &__grid {
-    margin-top: pxToRem(15px);
     display: grid;
     gap: pxToRem(15px);
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
+  }
+
+  &__homepage {
+    margin-top: pxToRem(15px);
+  }
+}
+
+.products {
+  flex: 1 1 auto;
+
+  &__homepage:first-child {
+    border-bottom: 1px solid var(--grey-1);
+    padding-bottom: pxToRem(30px);
   }
 }
 
@@ -69,16 +81,19 @@
   margin-top: pxToRem(30px);
 }
 
-.items > div:first-child {
-  border-bottom: 1px solid var(--grey-1);
-  padding-bottom: pxToRem(30px);
-}
-
 // Tablet SD
 @include breakpoint(small) {
   .items {
     &__grid {
       gap: pxToRem(40px);
+    }
+
+    &__homepage {
+      margin-top: pxToRem(40px);
+    }
+
+    &__title {
+      margin-top: pxToRem(40px);
     }
   }
 
@@ -88,12 +103,10 @@
     }
   }
 
-  .items__title {
-    margin-top: pxToRem(40px);
-  }
-
-  .items > div:first-child {
-    padding-bottom: pxToRem(40px);
+  .products {
+    &__homepage:first-child {
+      padding-bottom: pxToRem(40px);
+    }
   }
 }
 
