@@ -5,7 +5,7 @@ What you are about to look through is my first serious pet project called H-Shop
 
 ## Getting started
 
-First clone the ripo to your local machine. Then install all the dependendecies for both frontend and backend:
+First clone the ripo to your local machine. Then install all the dependencies for both frontend and backend:
 ```
 npm install
 ```
