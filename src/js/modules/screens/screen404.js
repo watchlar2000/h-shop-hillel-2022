@@ -1,7 +1,5 @@
-const Screen404 = {
-  render: () => {
+export const Screen404 = {
+  async render() {
     return `<div>404 Error</div>`;
   },
 };
-
-export default Screen404;

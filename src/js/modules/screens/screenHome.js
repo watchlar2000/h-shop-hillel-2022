@@ -1,28 +1,26 @@
-import data from '../../../data.js';
-const { products } = data;
+import { fetchProducts } from '../utils.js';
+import { countDiscount } from '../utils.js';
 
-const ScreenHome = {
-  renderOnSale() {
-    const discount = 0.1;
+export const ScreenHome = {
+  async renderOnSale() {
+    const products = await fetchProducts();
 
     return `
       <ul class="items__grid">
         ${products
           .map((product) => {
             if (product.isOnSale !== true) return;
-            const discountPrice = Math.floor(
-              product.price - product.price * discount
-            );
+            const discountPrice = countDiscount(product.price);
             return `
           <li class="item" data-product='${product._id}'>
           <div class="item__img">
-          <span class="sale">on sale</span>
+          <span class="sale">sale</span>
             <img
               src="${product.images[0]}"
               alt="${product.name}"
             />
           </div>
-          <h3 class="item__title"><a href="/#/product/${product._id}">${product.name}</a></h3>
+          <h3 class="item__title"><a href="./product.html#${product._id}" class="product__link">${product.name}</a></h3>
           <span class="price">$${discountPrice}</span>
           <span class="price--old">$${product.price}</span>
         </li> 
@@ -32,7 +30,9 @@ const ScreenHome = {
       </ul>
     `;
   },
-  renderNewArrival() {
+  async renderNewArrival() {
+    const products = await fetchProducts();
+
     return `
       <ul class="items__grid">
         ${products
@@ -46,7 +46,7 @@ const ScreenHome = {
             alt="${product.name}"
           />
         </div>
-        <h3 class="item__title"><a href="/#/product/${product._id}">${product.name}</a></h3>
+        <h3 class="item__title"><a href="./product.html#${product._id}" class="product__link">${product.name}</a></h3>
         <span class="price">$${product.price}</span>
       </li> 
         `;
@@ -55,22 +55,23 @@ const ScreenHome = {
       </ul>
     `;
   },
-  render() {
+  async render() {
+    const onSaleData = await this.renderOnSale();
+    const newArrivalData = await this.renderNewArrival();
+
     return `
     <div class="products__homepage">
     <h3 class="items__title">On sale</h3>
     <div class="items__homepage">
-      ${this.renderOnSale()}
+      ${onSaleData}
     </div>
   </div>
   <div class="products__homepage">
     <h3 class="items__title">New arrival</h3>
     <div class="items__homepage">
-    ${this.renderNewArrival()}
+    ${newArrivalData}
     </div>
   </div>
     `;
   },
 };
-
-export default ScreenHome;

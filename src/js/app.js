@@ -1,60 +1,51 @@
 import { dropDown } from './modules/dropdown.js';
-import ScreenHome from './modules/screens/screenHome.js';
+import { ScreenHome } from './modules/screens/screenHome.js';
 import { ScreenProducts } from './modules/screens/screenProducts.js';
-import ScreenProduct from './modules/screens/screenProduct.js';
-// import data from '../data.js';
-import Screen404 from './modules/screens/screen404.js';
-// import { priceFilter } from './modules/slider.js';
+import { ScreenProduct } from './modules/screens/screenProduct.js';
+import { Screen404 } from './modules/screens/screen404.js';
+import { addEventOnProductLinks, parseRequestUrl } from './modules/utils.js';
+import { swiper } from './modules/slider.js';
 
+// swiper();
 dropDown();
 
 const routes = {
   '/': ScreenHome,
+  '/product/:id': ScreenProduct,
   '/fashion': ScreenProducts,
   '/shoes': ScreenProducts,
   '/accessories': ScreenProducts,
   '/shop': ScreenProducts,
-  '/products/:id': ScreenProduct,
 };
 
-// const { products } = data;
-
-const routerProducts = () => {
+const routerProducts = async () => {
   const request = window.location.pathname;
   const parseUrl = request.replace('.html', '');
-
-  const screen = routes[parseUrl] ? routes[parseUrl] : Screen404;
   const itemsHome = document.querySelector('#products');
+  const screen = routes[parseUrl] ? routes[parseUrl] : Screen404;
+  itemsHome.innerHTML = await screen.render(parseUrl.slice(1));
+  addEventOnProductLinks();
+  return;
+};
+swiper();
+const routerProduct = async () => {
+  const parseUrl = parseRequestUrl();
+  const itemsHome = document.querySelector('.main');
+  const screen = routes['/product/:id'];
 
-  if (parseUrl.slice(1) === 'shop') {
-    itemsHome.innerHTML = screen.render();
+  const product = await screen.render(parseUrl.id);
+  if (product === undefined) {
+    itemsHome.innerHTML = await Screen404.render();
   } else {
-    itemsHome.innerHTML = screen.render(parseUrl.slice(1));
+    itemsHome.innerHTML = product;
   }
 };
 
-const routerProduct = () => {
-  const request = parseRequestUrl();
-  const parseUrl =
-    (request.resource ? `/${request.resource}` : `/`) +
-    (request.id ? `/:id` : '') +
-    (request.verb ? `/${request.verb}` : '');
-  // const request = window.location.pathname;
-  // const request = ;
-  // console.log(window.location.hash);
-  // const parseUrl = request.replace('.html', '');
+const url = window.location.pathname;
 
-  const screen = routes[parseUrl] ? routes[parseUrl] : Screen404;
-  const itemsHome = document.querySelector('.main');
-  console.log(screen);
-  // itemsHome.innerHTML = routes.
-
-  // if (parseUrl.slice(1) === 'shop') {
-  //   itemsHome.innerHTML = screen.render();
-  // } else {
-  //   itemsHome.innerHTML = screen.render(parseUrl.slice(1));
-  // }
-};
-
-window.addEventListener('load', routerProducts);
-window.addEventListener('hashchange', routerProduct);
+if (url.replace('.html', '').slice(1) === 'product') {
+  document.addEventListener('DOMContentLoaded', routerProduct);
+  window.addEventListener('hashchange', routerProduct);
+} else {
+  window.addEventListener('load', routerProducts);
+}

@@ -9,7 +9,7 @@ export function dropDown() {
   });
 
   document.addEventListener('click', (e) => {
-    console.log(e.target);
+    // console.log(e.target);
     const isDropdownButton = e.target.matches('[data-dropdown-button]');
 
     if (!isDropdownButton && e.target.closest('[data-dropdown]') !== null) {

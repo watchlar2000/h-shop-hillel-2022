@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('./html/head.html', { "title": "H-shop", })
+  <body>
+    <div class="wrapper">
+      @@include('./html/header.html')
+      @@include('./html/breadcrumps_product.html', { "page": "Products", })
+      <div class="main" data-product>
+        <!-- <div class="product">
+          <div class="product__header">
+            <span class="sale">sale</span>
+            <h2 class="product__header--title">T-Shirt</h2>
+            <p class="product__sku">SKU: 345643643</p>
+            <div class="product__rating">
+              <span><i class="fa fa-star rating"></i></span>
+              <span><i class="fa fa-star rating"></i></span>
+              <span><i class="fa fa-star rating"></i></span>
+              <span><i class="fa fa-star rating"></i></span>
+              <span><i class="fa fa-star-half-o rating"></i></span>
+            </div>
+          </div>
+
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <div class="order">
+            <div class="order__price">
+              <span class="price">$100</span>
+              <span class="price--old">$125</span>
+            </div>
+            <div class="order__info">
+              <form action="" class="order__form">
+                <div class="relative">
+                  <div
+                    class="order__form--color order__grid grey-line order__padding-top"
+                  >
+                    <label for="color" class="label">Color</label>
+                    <select name="color" id="color">
+                      <option value="green">Green</option>
+                      <option value="beige">Beige</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="order__form--size order__grid">
+                  <label for="size" class="label">Size</label>
+                  <select name="size" id="size">
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                  </select>
+                </div>
+                <div class="relative">
+                  <div class="grey-line order__grid order__padding-top">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="order__amount"
+                    />
+                    <button type="submit" class="btn btn--order">
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="testimonials">
+            <div class="testimonials__controls">
+              <button class="btn testimonials__btn btn--description">
+                Description
+              </button>
+              <button class="btn testimonials__btn btn--reviews">
+                Reviews <span class="reviews"></span>
+              </button>
+            </div>
+            <div class="testimonials__content">
+              <p class="testimonials__content--description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+                voluptatibus soluta laudantium totam perspiciatis explicabo!
+              </p>
+              <p class="testimonials__content--reviews">Lorem, ipsum dolor.</p>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+          </div>
+          <div class="swiper-pagination swiper-preview"></div>
+        </div> -->
+
+        <!-- <div
+          class="swiper mySwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden"
+        >
+          <div class="swiper-wrapper" id="swiper-wrapper">
+            <div class="swiper-slide swiper-slide-prev">Slide 1</div>
+            <div class="swiper-slide swiper-slide-active">Slide 2</div>
+            <div class="swiper-slide swiper-slide-next">Slide 3</div>
+          </div>
+          <div
+            class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"
+          >
+            <span class="swiper-pagination-bullet swiper-preview"></span
+            ><span
+              class="swiper-pagination-bullet swiper-preview swiper-pagination-bullet-active"
+              aria-current="true"
+            ></span
+            ><span class="swiper-pagination-bullet swiper-preview"></span>
+          </div>
+        </div> -->
+      </div>
+      @@include('./html/footer.html')
+    </div>
+    @@include('./html/scripts.html')
+  </body>
+</html>

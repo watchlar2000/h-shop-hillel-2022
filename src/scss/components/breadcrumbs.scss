@@ -19,16 +19,16 @@
     width: 100%;
     background-color: var(--grey-2);
   }
+}
 
-  &__select {
-    padding: pxToRem(12px) pxToRem(7px);
-    font-size: pxToRem(15px);
-    border: 1px solid var(--grey-1);
-    border-radius: pxToRem(6px);
-    cursor: pointer;
-    background-color: var(--white);
-    outline: none;
-  }
+select {
+  padding: pxToRem(12px) pxToRem(7px);
+  font-size: pxToRem(15px);
+  border: 1px solid var(--grey-1);
+  border-radius: pxToRem(6px);
+  cursor: pointer;
+  background-color: var(--white);
+  outline: none;
 }
 
 // Tablet SD

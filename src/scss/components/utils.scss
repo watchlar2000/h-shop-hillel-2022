@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+
+.relative {
+  position: relative;
+}
+
+.grey-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 0.0625rem;
+  background-color: var(--grey-1);
+  width: 100%;
+}
