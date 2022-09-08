@@ -1,7 +1,7 @@
 # H-Shop
 Hillel Project 2022
 
-What you are about to look through is my first serious pet project called H-Shop. It is an e-commerce app. Feel free to play aroung with this app. Any feedback would be higly appreciated. 
+What you are about to look through is my first serious pet project called H-Shop. It is an e-commerce app. Feel free to play aroung with this app. Any feedback would be highly appreciated. 
 
 ## Getting started
 
